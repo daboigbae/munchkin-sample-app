@@ -1,15 +1,31 @@
 import React from "react";
 import { View } from "react-native";
 
-import {Button} from "@digital-art-dealers/react-native-component-lib";
+import {
+	getStorybookUI,
+	configure,
+	addDecorator
+} from "@storybook/react-native";
+import { withKnobs } from "@storybook/addon-knobs";
+
+import "../storybook/rn-addons";
+
+// enables knobs for all stories
+addDecorator(withKnobs);
+
+// import stories
+configure(() => {
+	require("../storybook/stories");
+}, module);
+
+// Refer to https://github.com/storybookjs/react-native/tree/master/app/react-native#getstorybookui-options
+// To find allowed options for getStorybookUI
+const StorybookUIRoot = getStorybookUI({});
+
 const HomeScreen = () => {
 	return (
-		<View className="h-full w-full justify-center items-center px-4">
-			<Button.Primary
-				backgroundColor="bg-blue-600"
-				onPress={() => {}}
-				label="Change this button"
-			/>
+		<View className="h-full w-full bg-gray-800">
+			<StorybookUIRoot />
 		</View>
 	);
 };

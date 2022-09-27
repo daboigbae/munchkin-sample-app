@@ -5,7 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NAVIGATORS } from "../utils/screens";
 
 import LandingScreen from "../screens/LandingScreen";
-import BottomTabNavigation from "./BottomTabNavigation";
+import HomeScreen from "../screens/HomeScreen";
 
 const Stack = createStackNavigator();
 
@@ -23,7 +23,7 @@ const Navigation = () => (
 			/>
 			<Stack.Screen
 				name={NAVIGATORS.BOTTOM_TAB}
-				component={BottomTabNavigation}
+				component={HomeScreen}
 				options={NAVIGATION_OPTIONS}
 			/>
 		</Stack.Navigator>
