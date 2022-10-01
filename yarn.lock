@@ -797,7 +797,7 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@digital-art-dealers/react-native-component-lib@^1.0.11":
+"@digital-art-dealers/react-native-component-lib@^1.0.12":
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/@digital-art-dealers/react-native-component-lib/-/react-native-component-lib-1.0.12.tgz#cf30a88594f71c40324d5802a28c0f7a1e6ed8f1"
   integrity sha512-JHrMTuWiW3NhSjS/g02b6C2XHBgpnifdQCRc+Vykth9RevajP+GAM7E/acX9aOPzy2hL3+CMiFWRoJ9zpEXHkA==

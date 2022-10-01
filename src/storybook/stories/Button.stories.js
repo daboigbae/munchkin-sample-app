@@ -3,7 +3,7 @@
 import React from "react";
 
 import { action } from "@storybook/addon-actions";
-import { text } from "@storybook/addon-knobs";
+import { boolean, text } from "@storybook/addon-knobs";
 
 import { storiesOf } from "@storybook/react-native";
 import { View } from "react-native";
@@ -86,4 +86,28 @@ storiesOf("Buttons", module)
 				}
 			/>
 		</StoryWrapper>
-	));
+	))
+	.add("Custom Button", () => {
+		return (
+			<StoryWrapper
+				title="Custom Button"
+				description="Fully customizable NativeWind Button."
+				sampleCode={
+					"<Button\n\tlabel=\"Button Label\"\n\tonPress={() => {}}\n\tbuttonColor=\"bg-green-700\"\n\ttextColor=\"text-white\"\n\tdisabled={false}\n\tisLoading={false}\n\tcustomButtonStyle=\"rounded-full h-8 px-2 py-1 bg-purple-200 w-32 justify-center items-center\"\n\tcustomTextStyle=\"text-black\"/>"
+				}
+			>
+				<View className="w-full items-center py-4 justify-center">
+					<Button
+						label={text("label", "Button Label")}
+						onPress={action("clicked-text")}
+						buttonColor="bg-green-700"
+						textColor="text-white"
+						disabled={boolean("Disabled?", false)}
+						isLoading={boolean("Is Loading?", false)}
+						customButtonStyle="rounded-full h-8 px-2 py-1 bg-purple-200 w-32 justify-center items-center"
+						customTextStyle="text-black"
+					/>
+				</View>
+			</StoryWrapper>
+		);
+	});
