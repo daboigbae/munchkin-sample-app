@@ -3,13 +3,12 @@ import Clipboard from "@react-native-clipboard/clipboard";
 
 import PropTypes from "prop-types";
 
-import { View, Text, Alert } from "react-native";
+import { View, Text, Alert, ScrollView } from "react-native";
 
 import {
 	Button,
 	ItemSeparator
 } from "@digital-art-dealers/react-native-component-lib";
-import { ScrollView } from "react-native-gesture-handler";
 
 const StoryWrapper = ({ title, description, sampleCode, children }) => {
 	const copyToClipboard = () => {
@@ -18,26 +17,28 @@ const StoryWrapper = ({ title, description, sampleCode, children }) => {
 	};
 
 	return (
-		<ScrollView className="w-full h-full p-4 pt-12">
-			<Text className="text-4xl font-bold text-white">{title}</Text>
-			<ItemSeparator separatorStyle="h-2" />
-			<Text className="text-white text-base">{description}</Text>
-			<ItemSeparator separatorStyle="h-8" />
-			<Text className="text-white text-base font-bold">Example:</Text>
-			{children}
-			<ItemSeparator separatorStyle="h-8" />
-			<Text className="text-white text-base font-bold">Sample Code:</Text>
-			<ItemSeparator separatorStyle="h-2" />
-			<View className="bg-gray-300 p-4 rounded-md">
-				<Text className="font-light">{sampleCode}</Text>
+		<ScrollView>
+			<View className="h-full pb-4 pt-8 px-4">
+				<Text className="text-4xl font-bold text-white">{title}</Text>
+				<ItemSeparator separatorStyle="h-2" />
+				<Text className="text-white text-base">{description}</Text>
+				<ItemSeparator separatorStyle="h-8" />
+				<Text className="text-white text-base font-bold">Example:</Text>
+				{children}
+				<ItemSeparator separatorStyle="h-8" />
+				<Text className="text-white text-base font-bold">Sample Code:</Text>
+				<ItemSeparator separatorStyle="h-2" />
+				<View className="bg-gray-300 p-4 rounded-md">
+					<Text className="font-light">{sampleCode}</Text>
+				</View>
+				<ItemSeparator separatorStyle="h-4" />
+				<Button
+					label="Copy to Clipboard"
+					onPress={copyToClipboard}
+					buttonColor="bg-orange-500"
+					textColor="text-white"
+				/>
 			</View>
-			<ItemSeparator separatorStyle="h-4" />
-			<Button
-				label="Copy to Clipboard"
-				onPress={copyToClipboard}
-				buttonColor="bg-orange-500"
-				textColor="text-white"
-			/>
 		</ScrollView>
 	);
 };
